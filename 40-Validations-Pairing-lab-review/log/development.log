@@ -1,0 +1,897 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEmployees (20180411182746)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "employees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "alias" varchar, "title" varchar, "office" varchar, "img_url" varchar, "dog_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180411182746"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateDogs (20180411182815)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "dogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "breed" varchar, "age" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180411182815"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-05-21 14:46:44.725974"], ["updated_at", "2021-05-21 14:46:44.725974"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Jasper"], ["breed", "Dingo"], ["age", "young"], ["created_at", "2021-05-21 14:47:05.692337"], ["updated_at", "2021-05-21 14:47:05.692337"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Sparky"], ["breed", "Blood Hound"], ["age", "senior"], ["created_at", "2021-05-21 14:47:05.696593"], ["updated_at", "2021-05-21 14:47:05.696593"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Penny"], ["breed", "Kelpie"], ["age", "young"], ["created_at", "2021-05-21 14:47:05.700852"], ["updated_at", "2021-05-21 14:47:05.700852"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Daisy"], ["breed", "Irish Wolfhound"], ["age", "puppy"], ["created_at", "2021-05-21 14:47:05.704287"], ["updated_at", "2021-05-21 14:47:05.704287"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "dogs" ("name", "breed", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lucy"], ["breed", "Sealyham Terrier"], ["age", "young"], ["created_at", "2021-05-21 14:47:05.709740"], ["updated_at", "2021-05-21 14:47:05.709740"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jim"], ["last_name", "Halpert"], ["alias", "Big Tuna"], ["title", "Regional Co-Manager"], ["office", "Scranton"], ["img_url", "https://s-i.huffpost.com/gen/2028878/images/n-UPROXX-628x314.jpg"], ["dog_id", 2], ["created_at", "2021-05-21 14:47:05.769784"], ["updated_at", "2021-05-21 14:47:05.769784"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Michael"], ["last_name", "Scott"], ["alias", "Prison Mike"], ["title", "Regional Manager"], ["office", "Scranton"], ["img_url", "https://i2.wp.com/mtncatholic.com/wp-content/uploads/2016/10/6357600113572837231773916132_michael-scott-s-top-tantrums.png?fit=500%2C359"], ["dog_id", 1], ["created_at", "2021-05-21 14:47:05.775305"], ["updated_at", "2021-05-21 14:47:05.775305"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Karen"], ["last_name", "Filippelli"], ["alias", "none"], ["title", "Sales Representative"], ["office", "Stamford"], ["img_url", "https://i.redd.it/vigerabg4x7z.jpg"], ["dog_id", 3], ["created_at", "2021-05-21 14:47:05.779436"], ["updated_at", "2021-05-21 14:47:05.779436"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Dwight"], ["last_name", "Schrute"], ["alias", "Bear Expert"], ["title", "Assistant to the Regional Manager"], ["office", "Scranton"], ["img_url", "https://typeset-beta.imgix.net/rehost/2016/10/31/dfe8a990-943e-44fc-a613-f6a3c7aaedff.jpg?w=970&h=582&fit=crop&crop=faces&auto=format&q=70"], ["dog_id", 1], ["created_at", "2021-05-21 14:47:05.785332"], ["updated_at", "2021-05-21 14:47:05.785332"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jan"], ["last_name", "Levinson"], ["alias", "none"], ["title", "VP of Sales"], ["office", "Corporate"], ["img_url", "https://vignette.wikia.nocookie.net/theoffice/images/b/b6/111423.jpg/revision/latest?cb=20101116030321"], ["dog_id", 4], ["created_at", "2021-05-21 14:47:05.790307"], ["updated_at", "2021-05-21 14:47:05.790307"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 2]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Toby"], ["last_name", "Flenderson"], ["alias", "The worst"], ["title", "HR Representative"], ["office", "Scranton"], ["img_url", "https://static.wikia.nocookie.net/characters/images/0/09/Toby_Flenderson.jpg/revision/latest?cb=20151130165216"], ["dog_id", 3], ["created_at", "2021-05-21 14:47:05.796849"], ["updated_at", "2021-05-21 14:47:05.796849"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Pam"], ["last_name", "Beesly"], ["alias", "Beesly"], ["title", "Office Administrator"], ["office", "Scranton"], ["img_url", "http://img4.bdbphotos.com/images/700x350/q/m/qm3wuw0enjlzen.jpg?skj2io4l"], ["dog_id", 5], ["created_at", "2021-05-21 14:47:05.801533"], ["updated_at", "2021-05-21 14:47:05.801533"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.5ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Kelly"], ["last_name", "Kapoor"], ["alias", "none"], ["title", "Customer Service Representative"], ["office", "Scranton"], ["img_url", "https://vignette.wikia.nocookie.net/theoffice/images/6/69/Kelly_Kapoor.jpg/revision/latest/scale-to-width-down/700?cb=20170701090501"], ["dog_id", 2], ["created_at", "2021-05-21 14:47:05.809051"], ["updated_at", "2021-05-21 14:47:05.809051"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 3]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Oscar"], ["last_name", "Martinez"], ["alias", "none"], ["title", "Accountant"], ["office", "Scranton"], ["img_url", "https://vignette.wikia.nocookie.net/theoffice/images/2/25/Oscar_Martinez.jpg/revision/latest/scale-to-width-down/700?cb=20170701085818"], ["dog_id", 4], ["created_at", "2021-05-21 14:47:05.813544"], ["updated_at", "2021-05-21 14:47:05.813544"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Darryl"], ["last_name", "Philbin"], ["alias", "none"], ["title", "Warehouse Assistant"], ["office", "Scranton"], ["img_url", "https://vignette.wikia.nocookie.net/theoffice/images/4/49/2009DarrylCroppeed.PNG/revision/latest/scale-to-width-down/1000?cb=20170701085636"], ["dog_id", 5], ["created_at", "2021-05-21 14:47:05.818172"], ["updated_at", "2021-05-21 14:47:05.818172"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDog Load (4.7ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" ORDER BY "dogs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."dog_id" = ? LIMIT ?[0m  [["dog_id", 1], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2021-05-21 09:50:04 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/vidhi.sharma/.rvm/gems/ruby-2.6.1/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (9.6ms)
+Completed 200 OK in 187ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dogs" for ::1 at 2021-05-21 09:54:11 -0500
+Processing by DogsController#index as HTML
+Completed 406 Not Acceptable in 31ms
+
+
+  
+ActionController::UnknownFormat (DogsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/dogs" for ::1 at 2021-05-21 09:54:57 -0500
+Processing by DogsController#index as HTML
+Completed 406 Not Acceptable in 6ms
+
+
+  
+ActionController::UnknownFormat (DogsController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.6) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.6) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.6) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/dogs" for ::1 at 2021-05-21 09:56:10 -0500
+Processing by DogsController#index as HTML
+  Rendering dogs/index.html.erb within layouts/application
+  [1m[36mDog Load (0.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered dogs/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 3353ms (Views: 3342.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/dogs" for ::1 at 2021-05-21 09:57:06 -0500
+Processing by DogsController#index as HTML
+  Rendering dogs/index.html.erb within layouts/application
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered dogs/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 113ms (Views: 104.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dogs/1" for ::1 at 2021-05-21 09:57:20 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for DogsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/dogs/1" for ::1 at 2021-05-21 10:01:09 -0500
+Processing by DogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dogs/show.html.erb within layouts/application
+  [1m[36mEmployee Load (0.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  Rendered dogs/show.html.erb within layouts/application (199.5ms)
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 3.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+     7: <h4> Employees: </h4>
+     8: <% @dog.employees.each do |employee| %>
+     9:     <h3>
+    10:         <%= "#{@employee.first_name} #{@employee.last_name}" %>
+    11:     </h3>
+    12: <% end %>
+  
+app/views/dogs/show.html.erb:10:in `block in _app_views_dogs_show_html_erb___3330069902146708808_70150784588320'
+app/views/dogs/show.html.erb:8:in `_app_views_dogs_show_html_erb___3330069902146708808_70150784588320'
+Started GET "/dogs/1" for ::1 at 2021-05-21 10:01:32 -0500
+Processing by DogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dogs/show.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  Rendered dogs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 170ms (Views: 152.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dogs/1" for ::1 at 2021-05-21 10:03:26 -0500
+Processing by DogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dogs/show.html.erb within layouts/application
+  [1m[36mEmployee Load (3.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  Rendered dogs/show.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 506ms (Views: 452.0ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/employees" for ::1 at 2021-05-21 10:07:32 -0500
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 354ms (Views: 238.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/employees/2" for ::1 at 2021-05-21 10:07:40 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for EmployeesController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.0) lib/web_console/middleware.rb:137:in `call_app'
+web-console (3.6.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/employees/2" for ::1 at 2021-05-21 10:11:20 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (1.8ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered employees/show.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 155ms (Views: 102.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/employees/2" for ::1 at 2021-05-21 10:12:24 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEmployee Load (0.8ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered employees/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 225ms (Views: 198.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/dogs/1" for ::1 at 2021-05-21 10:12:28 -0500
+Processing by DogsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering dogs/show.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  Rendered dogs/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 80ms (Views: 66.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/employees" for ::1 at 2021-05-21 10:19:28 -0500
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 190ms (Views: 112.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:19:30 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (1774.3ms)
+  Rendered employees/new.html.erb within layouts/application (1777.5ms)
+Completed 200 OK in 1985ms (Views: 1878.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:28:24 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3SNUUvjCMVbXXmMaGiTEU4UUnhuLURcOa1DHvoQZ/e5aSK2MBNzWrJ3P+h1cJ+J0S4xLv7U4qw4palek+3i6ng==", "employee"=>{"first_name"=>"sam", "last_name"=>"L. ", "alias"=>"something", "title"=>"Regional Co-Manager", "office"=>"Scranton", "img_url"=>"https://imgix.ranker.com/list_img_v2/19409/2739409/original/memes-only-fans-of-the-office-will-understand-u1?w=817&h=427&fm=jpg&q=50&fit=crop", "dog_id"=>"4"}, "commit"=>"Create Employee"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDog Load (0.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mEmployee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 336689ms (ActiveRecord: 3.5ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/employees_controller.rb:18:in `create'
+Started GET "/employees/new" for ::1 at 2021-05-21 10:35:33 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (14.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (601.9ms)
+  Rendered employees/new.html.erb within layouts/application (640.8ms)
+Completed 200 OK in 2081ms (Views: 1491.2ms | ActiveRecord: 61.5ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:35:41 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pax4HCnUNtnY4OS6f6Hxd9G+SntvgGHE5jEnEKk9rVMix4HC1crRI5Jxfb05otdQHyaf31Hp3cSkC7cK1lzqIw==", "employee"=>{"first_name"=>"", "last_name"=>"", "alias"=>"", "title"=>"Regional Co-Manager", "office"=>"", "img_url"=>"", "dog_id"=>"1"}, "commit"=>"Create Employee"}
+Completed 500 Internal Server Error in 93643ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/employees_controller.rb:18:in `create'
+Started GET "/employees/new" for ::1 at 2021-05-21 10:37:26 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (13.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (432.7ms)
+  Rendered employees/new.html.erb within layouts/application (464.7ms)
+Completed 200 OK in 1742ms (Views: 1248.9ms | ActiveRecord: 79.2ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:37:43 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z3WvgKtQ1HSruoXhO/uCZ31i1whuF/o+4+PQMLApCFXgHlZeV04zjuErHOZ9+KRAs/oCrFB+Rj6h2UAqz0hPJQ==", "employee"=>{"first_name"=>"sam", "last_name"=>"L.", "alias"=>"something", "title"=>"Regional Co-Manager", "office"=>"cc", "img_url"=>"https://imgix.ranker.com/list_img_v2/19409/2739409/original/memes-only-fans-of-the-office-will-understand-u1?w=817&h=427&fm=jpg&q=50&fit=crop", "dog_id"=>"1"}, "commit"=>"Create Employee"}
+  [1m[36mDog Load (2.4ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (4.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/employees/new
+Completed 302 Found in 237ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:37:43 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (1.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (242.8ms)
+  Rendered employees/new.html.erb within layouts/application (261.5ms)
+Completed 200 OK in 1049ms (Views: 1024.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:43:41 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KazPMIa1PbplsiKsIL4d1E1kVobofLO20+pync5fJ0WuxzbueqvaQC8ju6tmvTvzg/yDItYVD7aR0OKHsT5gNQ==", "employee"=>{"first_name"=>"Sam", "last_name"=>"L.", "alias"=>"something", "title"=>"Regional Co-Manager", "office"=>"cc", "img_url"=>"https://imgix.ranker.com/list_img_v2/19409/2739409/original/memes-only-fans-of-the-office-will-understand-u1?w=817&h=427&fm=jpg&q=50&fit=crop", "dog_id"=>"3"}, "commit"=>"Create Employee"}
+  [1m[36mDog Load (2.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (3.3ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/employees/new
+Completed 302 Found in 799ms (ActiveRecord: 44.4ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:43:43 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (1.9ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (231.4ms)
+  Rendered employees/new.html.erb within layouts/application (249.4ms)
+Completed 200 OK in 1034ms (Views: 995.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:43:59 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (271.7ms)
+  Rendered employees/new.html.erb within layouts/application (291.3ms)
+Completed 500 Internal Server Error in 347ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for nil:NilClass):
+    1: <% if flash[:errors].length > 0 %>
+    2:     <% flash[:errors].each do |error| %>
+    3:         <p><%= error %> </p>
+    4:     <% end %>
+  
+app/views/employees/_form.html.erb:1:in `_app_views_employees__form_html_erb___914755624402773479_70150773770380'
+app/views/employees/new.html.erb:1:in `_app_views_employees_new_html_erb___3037775638871879590_70150773302960'
+Started GET "/employees/new" for ::1 at 2021-05-21 10:44:22 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/_form.html.erb (377.8ms)
+  Rendered employees/new.html.erb within layouts/application (390.5ms)
+Completed 500 Internal Server Error in 536ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `length' for nil:NilClass):
+    1: <% if flash[:errors].length > 0 %>
+    2:     <% flash[:errors].each do |error| %>
+    3:         <p><%= error %> </p>
+    4:     <% end %>
+  
+app/views/employees/_form.html.erb:1:in `_app_views_employees__form_html_erb___914755624402773479_70150787749540'
+app/views/employees/new.html.erb:1:in `_app_views_employees_new_html_erb___3037775638871879590_70150702863220'
+Started GET "/employees/new" for ::1 at 2021-05-21 10:45:04 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (1.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (565.1ms)
+  Rendered employees/new.html.erb within layouts/application (617.3ms)
+Completed 200 OK in 1723ms (Views: 1685.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:45:15 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AY5xLLgqgv8VvWiIX+NOUM90yr88q+KMEH2QIrnq28KG5YjyRDRlBV8s8Y8Z4Gh3AewfGwLCXoxSRwA4xoucsg==", "employee"=>{"first_name"=>"", "last_name"=>"", "alias"=>"", "title"=>"Regional Co-Manager", "office"=>"", "img_url"=>"", "dog_id"=>"1"}, "commit"=>"Create Employee"}
+  [1m[36mDog Load (2.7ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/employees/new
+Completed 302 Found in 266ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:45:15 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (1.1ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (251.5ms)
+  Rendered employees/new.html.erb within layouts/application (283.1ms)
+Completed 200 OK in 1174ms (Views: 1137.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:45:23 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (1.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (304.2ms)
+  Rendered employees/new.html.erb within layouts/application (318.1ms)
+Completed 200 OK in 1328ms (Views: 1289.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:46:49 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eRK8HaB7+GjvNaYs4tVQScCuOaEwUJV8fL/Ir6LPNf/+eUXDXGUfkqWkPyuk1nZuDjbsBQ45KXw+hVi13a5yjw==", "employee"=>{"first_name"=>"Sam ", "last_name"=>"", "alias"=>"Big Tuna", "title"=>"Regional Co-Manager", "office"=>"", "img_url"=>"", "dog_id"=>"1"}, "commit"=>"Create Employee"}
+  [1m[36mDog Load (1.4ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Big Tuna"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/employees/new
+Completed 302 Found in 1069ms (ActiveRecord: 34.1ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:46:51 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (7.1ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (578.9ms)
+  Rendered employees/new.html.erb within layouts/application (608.8ms)
+Completed 200 OK in 2872ms (Views: 1786.5ms | ActiveRecord: 71.1ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:49:23 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (12.1ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (742.1ms)
+  Rendered employees/new.html.erb within layouts/application (753.5ms)
+Completed 200 OK in 2232ms (Views: 1636.3ms | ActiveRecord: 74.0ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:49:46 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kTjUpZWKizMr1d7YhQSBydRqazGnnxo9WwgOzK8btxoWUy17aZRsyWFER9/DB6fuGvK+lZn2pj0ZMp7W0Hrwag==", "employee"=>{"first_name"=>"s", "last_name"=>"L.", "alias"=>"Big Tuna", "title"=>"Regional Co-Manager", "office"=>"cc", "img_url"=>"", "dog_id"=>"4"}, "commit"=>"Create Employee"}
+  [1m[36mDog Load (1.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (16.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Big Tuna"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/employees/new
+Completed 302 Found in 516ms (ActiveRecord: 18.9ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:49:46 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (1.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (232.4ms)
+  Rendered employees/new.html.erb within layouts/application (328.8ms)
+Completed 200 OK in 1223ms (Views: 1189.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:51:09 -0500
+Processing by EmployeesController#new as HTML
+Completed 500 Internal Server Error in 32ms
+
+
+  
+SyntaxError (/Users/vidhi.sharma/Desktop/validations/app/models/employee.rb:10: syntax error, unexpected '\n', expecting =>):
+  
+app/models/employee.rb:10: syntax error, unexpected '\n', expecting =>
+app/controllers/employees_controller.rb:12:in `new'
+Started GET "/employees/new" for ::1 at 2021-05-21 10:52:09 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (1.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (404.5ms)
+  Rendered employees/new.html.erb within layouts/application (424.4ms)
+Completed 200 OK in 1777ms (Views: 1285.3ms | ActiveRecord: 39.3ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 10:52:30 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yInur95Mr4pbKQsHSnvSA8fGDfDKVR5hnojZ+vuAShFP4hdxIlJIcBG4kgAMePQkCV7YVPQ8omHcsknghOENYQ==", "employee"=>{"first_name"=>"Vidhi", "last_name"=>"Sharma", "alias"=>"Big Tuna", "title"=>"Regional Co-Manager", "office"=>"cc", "img_url"=>"", "dog_id"=>"4"}, "commit"=>"Create Employee"}
+  [1m[36mDog Load (1.5ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (9.7ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "Regional Co-Manager"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "Big Tuna"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/employees/new
+Completed 302 Found in 563ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 10:52:30 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (2.5ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (232.8ms)
+  Rendered employees/new.html.erb within layouts/application (259.7ms)
+Completed 200 OK in 1138ms (Views: 1094.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/employees" for ::1 at 2021-05-21 10:55:15 -0500
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (3.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (402.0ms)
+Completed 200 OK in 1520ms (Views: 1398.3ms | ActiveRecord: 33.0ms)
+
+
+Started GET "/employees/6" for ::1 at 2021-05-21 10:55:21 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mDog Load (1.6ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered employees/show.html.erb within layouts/application (224.0ms)
+Completed 200 OK in 1168ms (Views: 1077.5ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/employees" for ::1 at 2021-05-21 10:55:32 -0500
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (11.7ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (134.4ms)
+Completed 200 OK in 1288ms (Views: 1250.0ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/employees/6" for ::1 at 2021-05-21 10:55:36 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (1.6ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mDog Load (7.3ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered employees/show.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 596ms (Views: 526.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/employees/6/edit" for ::1 at 2021-05-21 10:55:41 -0500
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  [1m[36mDog Load (5.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (257.3ms)
+  Rendered employees/edit.html.erb within layouts/application (267.6ms)
+Completed 200 OK in 1071ms (Views: 978.7ms | ActiveRecord: 6.7ms)
+
+
+Started PATCH "/employees/6" for ::1 at 2021-05-21 10:55:58 -0500
+Processing by EmployeesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ggr4o82C2IY1mKP+egC/dJpQz+Z5vZl0ploy8F4/GpudYQF9MZw/fH8JOvk8A5lTVMgaQkfUJXTkYKLqIV5d6w==", "employee"=>{"first_name"=>"Toby", "last_name"=>"Flenderson", "alias"=>"The worst", "title"=>"HR Representative", "office"=>"Scranton", "img_url"=>"https://imgix.ranker.com/list_img_v2/19409/2739409/original/memes-only-fans-of-the-office-will-understand-u1?w=817&h=427&fm=jpg&q=50&fit=crop", "dog_id"=>"3"}, "commit"=>"Update Employee", "id"=>"6"}
+  [1m[36mEmployee Load (15.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (9.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDog Load (7.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (8.7ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["title", "HR Representative"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (17.4ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? AND ("employees"."id" != ?) LIMIT ?[0m  [["alias", "The worst"], ["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (8.1ms)[0m  [1m[33mUPDATE "employees" SET "img_url" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["img_url", "https://imgix.ranker.com/list_img_v2/19409/2739409/original/memes-only-fans-of-the-office-will-understand-u1?w=817&h=427&fm=jpg&q=50&fit=crop"], ["updated_at", "2021-05-21 15:55:58.751907"], ["id", 6]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/employees/6
+Completed 302 Found in 533ms (ActiveRecord: 70.2ms)
+
+
+Started GET "/employees/6" for ::1 at 2021-05-21 10:55:58 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (1.7ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mDog Load (1.7ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered employees/show.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 946ms (Views: 876.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/dogs" for ::1 at 2021-05-21 10:59:20 -0500
+Processing by DogsController#index as HTML
+Completed 500 Internal Server Error in 26ms
+
+
+  
+SyntaxError (/Users/vidhi.sharma/Desktop/validations/app/models/dog.rb:5: syntax error, unexpected '|', expecting ')'
+        self.all.sort_by(|dog| dog.employees.count )
+                         ^
+/Users/vidhi.sharma/Desktop/validations/app/models/dog.rb:5: syntax error, unexpected ')', expecting end
+..._by(|dog| dog.employees.count )
+...                              ^):
+  
+app/models/dog.rb:5: syntax error, unexpected '|', expecting ')'
+app/models/dog.rb:5: syntax error, unexpected ')', expecting end
+app/controllers/dogs_controller.rb:4:in `index'
+Started GET "/dogs" for ::1 at 2021-05-21 11:00:24 -0500
+Processing by DogsController#index as HTML
+  Rendering dogs/index.html.erb within layouts/application
+  [1m[36mDog Load (3.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered dogs/index.html.erb within layouts/application (251.7ms)
+Completed 200 OK in 1204ms (Views: 1088.6ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/dogs" for ::1 at 2021-05-21 11:00:51 -0500
+Processing by DogsController#index as HTML
+  [1m[36mDog Load (3.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 3]]
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 4]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 5]]
+  Rendering dogs/index.html.erb within layouts/application
+  Rendered dogs/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 1818ms (Views: 1035.7ms | ActiveRecord: 51.7ms)
+
+
+Started GET "/dogs" for ::1 at 2021-05-21 11:01:05 -0500
+Processing by DogsController#index as HTML
+  [1m[36mDog Load (10.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 2]]
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 3]]
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 4]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 5]]
+  Rendering dogs/index.html.erb within layouts/application
+  Rendered dogs/index.html.erb within layouts/application (60.6ms)
+Completed 200 OK in 1734ms (Views: 931.7ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/dogs" for ::1 at 2021-05-21 11:01:16 -0500
+Processing by DogsController#index as HTML
+  Rendering dogs/index.html.erb within layouts/application
+  [1m[36mDog Load (2.5ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered dogs/index.html.erb within layouts/application (319.8ms)
+Completed 200 OK in 1463ms (Views: 1219.5ms | ActiveRecord: 30.4ms)
+
+
+Started GET "/dogs/4" for ::1 at 2021-05-21 11:01:23 -0500
+Processing by DogsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mDog Load (2.1ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering dogs/show.html.erb within layouts/application
+  [1m[36mEmployee Load (1.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 4]]
+  Rendered dogs/show.html.erb within layouts/application (286.3ms)
+Completed 200 OK in 954ms (Views: 878.8ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/employees" for ::1 at 2021-05-21 11:01:32 -0500
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (60.5ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (282.3ms)
+Completed 200 OK in 1549ms (Views: 1448.9ms | ActiveRecord: 60.5ms)
+
+
+Started GET "/employees/new" for ::1 at 2021-05-21 11:01:40 -0500
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mDog Load (5.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  Rendered employees/_form.html.erb (289.9ms)
+  Rendered employees/new.html.erb within layouts/application (310.8ms)
+Completed 200 OK in 2775ms (Views: 2640.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/employees" for ::1 at 2021-05-21 11:02:03 -0500
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FrVAyVz3VYs+FB9rscgUcA3/88kRhvBtFFEYr9zHLZmR3rkXoOmycXSFhmz3yzJXw2cmbS/vTG1Wa4i1o6Zq6Q==", "employee"=>{"first_name"=>"Sam", "last_name"=>"L.", "alias"=>"something", "title"=>"someone", "office"=>"Scranton", "img_url"=>"https://imgix.ranker.com/list_img_v2/19409/2739409/original/memes-only-fans-of-the-office-will-understand-u1?w=817&h=427&fm=jpg&q=50&fit=crop", "dog_id"=>"2"}, "commit"=>"Create Employee"}
+  [1m[36mDog Load (7.9ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "someone"], ["LIMIT", 1]]
+  [1m[36mEmployee Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "something"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCACHE Employee Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."title" = ? LIMIT ?[0m  [["title", "someone"], ["LIMIT", 1]]
+  [1m[36mCACHE Employee Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "employees" WHERE "employees"."alias" = ? LIMIT ?[0m  [["alias", "something"], ["LIMIT", 1]]
+  [1m[35mSQL (8.3ms)[0m  [1m[32mINSERT INTO "employees" ("first_name", "last_name", "alias", "title", "office", "img_url", "dog_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Sam"], ["last_name", "L."], ["alias", "something"], ["title", "someone"], ["office", "Scranton"], ["img_url", "https://imgix.ranker.com/list_img_v2/19409/2739409/original/memes-only-fans-of-the-office-will-understand-u1?w=817&h=427&fm=jpg&q=50&fit=crop"], ["dog_id", 2], ["created_at", "2021-05-21 16:02:05.636960"], ["updated_at", "2021-05-21 16:02:05.636960"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/employees/11
+Completed 302 Found in 1045ms (ActiveRecord: 50.7ms)
+
+
+Started GET "/employees/11" for ::1 at 2021-05-21 11:02:05 -0500
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mDog Load (2.2ms)[0m  [1m[34mSELECT  "dogs".* FROM "dogs" WHERE "dogs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered employees/show.html.erb within layouts/application (163.6ms)
+Completed 200 OK in 1109ms (Views: 957.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/dogs" for ::1 at 2021-05-21 11:02:13 -0500
+Processing by DogsController#index as HTML
+  [1m[36mDog Load (2.8ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs"[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 1]]
+  [1m[35m (36.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 2]]
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 3]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 4]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" WHERE "employees"."dog_id" = ?[0m  [["dog_id", 5]]
+  Rendering dogs/index.html.erb within layouts/application
+  Rendered dogs/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 1296ms (Views: 808.7ms | ActiveRecord: 50.2ms)
+
+

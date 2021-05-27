@@ -1,0 +1,14 @@
+<h1>New Patient Form</h1>
+
+<%= form_for @patient do |f|%>
+
+<%= f.label :name%>
+<%= f.text_field :name %>
+
+<%= f.label :doctors %>
+<%= f.collection_check_boxes :doctor_ids, @doctors, :id, :name %>
+
+<%= f.submit%>
+
+
+<%end%>

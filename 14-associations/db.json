@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Eric"
+    },
+    {
+      "id": 2,
+      "username": "Rianna"
+    },
+    {
+      "username": "Justin",
+      "id": 3
+    }
+  ],
+  "lists": [
+    {
+      "id": 1,
+      "name": "Grocery",
+      "items": [
+        "Chicken",
+        "Beef",
+        "Sandwiches"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Potential DJ Names",
+      "items": [
+        "Grandmaster Slamma Jamma",
+        "Smooth E"
+      ],
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "name": "Video Games Mastered",
+      "items": [
+        "Mortal Kombat",
+        "Overwatch",
+        "Apex Legends"
+      ],
+      "userId": 2
+    }
+  ]
+}

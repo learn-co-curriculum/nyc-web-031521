@@ -1,0 +1,19 @@
+<h3>Owner's page</h3>
+
+<h4>Owner name: <%= @owner.name %> </h4>
+
+<ul>
+<% @owner.dogs.each do |dog| %>
+<li> 
+    <%= link_to dog.name, dog_path(dog) %>
+</li>
+<% end %>
+</ul>
+
+<%= form_for @owner, method: "delete" do |f|%>
+<%= f.submit "Delete this owner" %>
+<% end %>
+
+<button> <%= link_to "Edit", edit_owner_path(@owner) %> </button>
+
+<button> <%= link_to "Go to Home page", owners_path %> </button>

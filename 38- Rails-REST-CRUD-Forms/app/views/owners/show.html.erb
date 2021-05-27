@@ -1,0 +1,7 @@
+<h3>Owner's page</h3>
+
+<h4>Owner name: <%= @owner.name %> </h4>
+
+<%= form_for @owner, method: "delete" do |f|%>
+<%= f.submit "Delete this owner" %>
+<% end %>

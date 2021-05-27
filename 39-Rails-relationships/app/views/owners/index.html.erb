@@ -1,0 +1,7 @@
+<h1>List of all owners:</h1>
+
+<% @owners.each do |owner| %>
+   <h4> <%= link_to "Owner name: #{owner.name}", owner_path(owner)  %> </h4>
+  <%#= link_to "Owner name: #{owner.name}", "/owners/#{owner.id}"  %> 
+
+<% end %>
